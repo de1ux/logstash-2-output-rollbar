@@ -2,7 +2,7 @@
 require "logstash/outputs/base"
 require "logstash/namespace"
 require "json"
-    
+
 # The Rollbar output will send events to the Rollbar event monitoring service.
 # The only required field is a Rollbar project access token with post_server_item
 # permissions. If you're already using Rollbar to report errors directly from your
@@ -59,7 +59,7 @@ class LogStash::Outputs::Rollbar < LogStash::Outputs::Base
 
     # We'll want to remove fields from data without removing them from the original event
     data = JSON.parse(event.to_json)
-    
+
     #
     # If logstash has created 'rollbar' fields, we'll use those to populate the item...
     #
@@ -82,7 +82,7 @@ class LogStash::Outputs::Rollbar < LogStash::Outputs::Base
     rb_item['data']['environment'] = @environment unless rb_item['data'].has_key?('environment')
 
     rb_item['data']['notifier']['name'] = 'logstash'
-    rb_item['data']['notifier']['version'] = Gem.loaded_specs["logstash-output-rollbar"].version
+    rb_item['data']['notifier']['version'] = Gem.loaded_specs["logstash-2-output-rollbar"].version
 
     # Construct the message body using either:
     #
