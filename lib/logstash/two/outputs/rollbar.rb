@@ -7,7 +7,7 @@ require "json"
 # The only required field is a Rollbar project access token with post_server_item
 # permissions. If you're already using Rollbar to report errors directly from your
 # applications, you can use the same token.
-class LogStash::Outputs::Rollbar < LogStash::Outputs::Base
+class LogStash::Two::Outputs::Rollbar < LogStash::Outputs::Base
   config_name "rollbar"
 
   # Each of these config values can be specified in the plugin configuration section, in which
@@ -82,7 +82,7 @@ class LogStash::Outputs::Rollbar < LogStash::Outputs::Base
     rb_item['data']['environment'] = @environment unless rb_item['data'].has_key?('environment')
 
     rb_item['data']['notifier']['name'] = 'logstash'
-    rb_item['data']['notifier']['version'] = Gem.loaded_specs["logstash-2-output-rollbar"].version
+    rb_item['data']['notifier']['version'] = Gem.loaded_specs["logstash-two-output-rollbar"].version
 
     # Construct the message body using either:
     #
