@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    logstash-two-output-rollbar (1.0.0)
+    logstash-output-rollbar2 (1.0.0)
       logstash-core-plugin-api (~> 1.0)
 
 GEM
@@ -90,7 +90,7 @@ PLATFORMS
 
 DEPENDENCIES
   logstash-devutils
-  logstash-two-output-rollbar!
+  logstash-output-rollbar2!
 
 BUNDLED WITH
    1.12.5
