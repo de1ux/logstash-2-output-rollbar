@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name            = "logstash-two-output-rollbar"
-  s.version         = "0.1.0"
+  s.version         = "1.0.0"
   s.licenses        = ["Apache License (2.0)"]
   s.summary         = "The Rollbar Logstash 2.x output sends events to the Rollbar error monitoring service."
   s.description     = "This gem is a logstash plugin. Install using: $LS_HOME/bin/logstash-plugin install logstash-two-output-rollbar. This gem is not a stand-alone program."
